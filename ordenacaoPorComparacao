@@ -1,0 +1,45 @@
+    Algoritmos de Ordenação:
+
+Propriedades:
+1) Algoritmo estável(preserva a ordem de elementos iguais)
+2) Algoritmo in-place(não usa memória extra)
+3) Por comparacao:
+- simples
+- dividir para conquistar
+Em tempo linear:
+- preço a pagar(memória extra)
+
+Bubble sort:
+- Baseado na troca de elementos adjacentes
+- Cada iteração leva o elemento maior para o final do vetor
+    
+    bubbleSort(A : list of sortable items):
+        swapped = true;
+        n = length(A);
+        while swapped {
+            swapped = false;
+            for each i in 1 to n-i {
+                if(A[i] > A[min]) {
+                    swap(A[i], A[min)
+                    swapped = true;
+                }
+            }
+        }
+    }
+
+Selection Sort:
+- Baseado na seleção do maior/menor e seu posicionamento no final
+- Primeiro seleciona, depois leva para a posição correta
+
+    selectionSort(A) {
+        n = length(A);
+        for each i in 1 to n {
+            min <- i
+            for j <- (i+1) to n {
+                if (A[j] < A[min]) {
+                    min <- j
+                }
+            }
+            swap(A[i], A[min)
+        }
+    }
