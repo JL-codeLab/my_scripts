@@ -28,7 +28,7 @@ Bubble sort:
     }
 
 Selection Sort:
-- Baseado na seleção do maior/menor e seu posicionamento no final
+- Baseado na seleção do maior/menor e seu posicionamento no final/inicio
 - Primeiro seleciona, depois leva para a posição correta
 
     selectionSort(A) {
@@ -43,3 +43,6 @@ Selection Sort:
             swap(A[i], A[min)
         }
     }
+
+Insertion Sort:
+- Baseado na ideia de inserir um elemento em uma lista ordenada 
