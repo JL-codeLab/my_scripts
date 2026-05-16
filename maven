@@ -1,0 +1,13 @@
+O que é maven?
+
+Java source (SomeApplication.java) -> Java Compiler -> Java Byte-code (SomeApplication.class)
+
+Com maven:
+
+Java source -> JAR Compiler -> JAR file (arquivo compactado)
+Ainda podendo-se adicionar dependências (bibliotecas) ao meu projeto. Logo o processo que faz tudo isso é chamado de build.
+
+Para não se fazer o processo de build toda vez, de modo não eficiente e à mão, pode-se automatizar esse processo pelo que chamamos de gerenciadores de build.
+
+O maven é um gerenciador de build, que como outros gerenciadores, ele automatiza o processo de build, desde a compilação do código, gerenciando dependências até o empacotamento e entrega do projeto.
+
