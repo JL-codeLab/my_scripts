@@ -1,0 +1,29 @@
+private T[] merge(T[] array1, T[] array2) {
+	T[] result = new T[array1.length + array2.length];
+}
+ Por que o codigo acima não funcionaria?
+
+Diz-se ser necessário implementar desse modo:
+private T[] merge(T[] array1, T[] array2) {
+	T[] result = (T[]) new Comparable(array1.length + array2.length);
+}
+
+Porque em Java não é possível instanciar um array de um tipo genérico como T[];
+Gera erro porque T[] não existe em tempo de execução, devido ao type erasure.
+T[] assim como List<String> e List<Integer>, só existem em tempo de compilação.
+Em runtime, ambas viram List.
+
+Em T[] result = (T[]) Comparable[...];
+estou criando um tipo concreto Comparable[] e fazendo cast para T[];
+Vai gerar erro Unchecked cast, mas é seguro SE T estender Comparable:
+
+public class MinhaClasse<T extends Comparable<T>>
+ou
+private <T extends Comparable<T>> T[] merge(...){}
+
+A abordagem moderna costuma usar:
+T[] result = Arrays.copyOf(array1, array1.length + array2.length);
+Depois copia termos de array2:
+ System.arraycopy(array2, 0, result, array1.length, array2.length);
+
+O jeito mais moderno.
