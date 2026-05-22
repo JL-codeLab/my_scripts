@@ -13,36 +13,71 @@ Bubble sort:
 - Baseado na troca de elementos adjacentes
 - Cada iteração leva o elemento maior para o final do vetor
     
-    bubbleSort(A : list of sortable items):
-        swapped = true;
-        n = length(A);
-        while swapped {
-            swapped = false;
-            for each i in 1 to n-i {
-                if(A[i] > A[min]) {
-                    swap(A[i], A[min)
-                    swapped = true;
-                }
-            }
-        }
+bubbleSort(A : list of sortable items):
+    swapped = true;
+    n = length(A);
+    while swapped {
+	swapped = false;
+	for each i in 1 to n-i {
+	    if(A[i] > A[min]) {
+		swap(A[i], A[min)
+		swapped = true;
+	    }
+	}
     }
+}
 
 Selection Sort:
 - Baseado na seleção do maior/menor e seu posicionamento no final/inicio
 - Primeiro seleciona, depois leva para a posição correta
 
-    selectionSort(A) {
-        n = length(A);
-        for each i in 1 to n {
-            min <- i
-            for j <- (i+1) to n {
-                if (A[j] < A[min]) {
-                    min <- j
-                }
-            }
-            swap(A[i], A[min)
-        }
+selectionSort(A) {
+    n = length(A);
+    for each i in 1 to n {
+	min <- i
+	for j <- (i+1) to n {
+	    if (A[j] < A[min]) {
+		min <- j
+	    }
+	}
+        swap(A[i], A[min)
     }
+}
 
 Insertion Sort:
 - Baseado na ideia de inserir um elemento em uma lista ordenada 
+pega o primeiro indice, e analisa o próximo, e vai trocando ou inserindo pelos anteriores até o início, se ele for menor e, então, incrementa o indice.
+
+
+===== DIVIDE AND CONQUER =====
+Dividir um problema maior, e conquistar subproblemas menores para combiná-los para uma resposta global.
+
+MergeSort:
+- divide uma entrada em duas partes de mesmo tamanho, até que chegue a uma listatrivial de tamanho 1. Na volta ele começa a reconstruir a resposta, comparando duas listas de tamanho 1, construindo uma nova de tamanho 2, e depois pega duas de tamanho 2 e constroi uma de tamanho 4 até o tamanho original da lista.
+Nesse merge, sempre se olha pra cabeça das listas, pois estão ordenadas, e com base nelas, vai inserindo na nova lista. Seu tempo é θ(n) e do merge sort é θ(n log n).
+
+Resumo: O Merge Sorte divide o vetor em duas metades, ordena recursivamente essas metades e depois intercala as partes ordenadas em um novo vetor.
+
+merge_sort(A):
+    if len(A) == 1:
+	return
+    else:
+	merge_sort(A[1..n/2])
+	merge_sort(A[(n/2)+1, n])
+	merge_the_two_sorted_lists (Implementação em Java com List)
+
+List merge(List left, List right) {
+    List result = new List();
+    while (left.length() > 0 and right.length() > 0) {
+	if(left.first() <= right.first()) {
+	    result.add(left.removeFirst());
+	} else {
+	    result.add(right.removeFirst());
+	}
+	if(left.length() > 0) result.append(left);
+	if(right.length() > 0) result.append(right);
+	return result;
+    }
+}
+
+QuickSort: 
