@@ -105,3 +105,15 @@ partition(int[] v, int left, int right)
     [left], v[i] = v[i], v[left]
     return i
 
+Busca binária:
+
+boolean search(int x, int v[], int l, int r) {
+    int m = (l + r) / 2;
+    if (l > r)
+	return false;
+    if (x == v[m])
+	return m;
+    if (x < v[m])
+	return search(x, v, l, m-1);
+    else
+	return search(x, v, m+1, r);
