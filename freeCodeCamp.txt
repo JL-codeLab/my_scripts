@@ -1,0 +1,12 @@
+stuck: unable to move, progress or escape.
+
+<element attribute="value"></element>
+
+Ex:
+<img src="https://algumaFoto.com" alt="foto"/>
+
+<a href="https://jl-codelab.github.io" target="_blank">Visit JL CODE LAB</a>
+
+<input type="checkbox" checked />
+
+boolean attributes: checked, disabled, readonly, required
