@@ -1,3 +1,5 @@
+ATTRIBUTES:
+
 stuck: unable to move, progress or escape.
 
 <element attribute="value"></element>
@@ -10,3 +12,9 @@ Ex:
 <input type="checkbox" checked />
 
 boolean attributes: checked, disabled, readonly, required
+
+LINK ELEMENT:
+
+<link rel="stylesheet" href="./styles.css"/>
+
+
